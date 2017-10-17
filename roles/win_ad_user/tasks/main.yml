@@ -1,0 +1,9 @@
+ - name: creeate win ad user
+   win_domain_user:
+      name: "{{ item.name }}"
+      firstname: "{{item.firstname }}"
+      surname: "{{ item.surname }}"
+      password: "{{ item.password }}"
+      state: present
+      email: '"{{ item.name }}"@ad..example.opentlc.com'
+   with_items: "{{ user_info }}"    
